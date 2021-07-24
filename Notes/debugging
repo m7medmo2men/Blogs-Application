@@ -1,0 +1,20 @@
+// Download Needed Things
+- npm install -g node-inspector
+- first terminal run > node-inspector
+- second terminal run > node --debug hello-debug.js
+- Open http://127.0.0.1:8080/debug?port=XXXX
+
+
+// Code Goes Like This
+
+const http = require('http')
+const port = 3000
+debugger
+http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'})
+  debugger  
+  res.end('Hello World\n')
+}).listen(3000, () => {
+  console.log(`Server running at http://localhost:${port}`)
+})
+
